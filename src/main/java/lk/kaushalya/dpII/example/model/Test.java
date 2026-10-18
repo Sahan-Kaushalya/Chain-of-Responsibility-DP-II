@@ -2,6 +2,7 @@ package lk.kaushalya.dpII.example.model;
 
 /// මෙතන patient object එක කියන්නේ request එක
 class Patient {
+
     String name;
     int age;
     String symptom;
