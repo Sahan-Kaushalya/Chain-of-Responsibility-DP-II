@@ -1,6 +1,6 @@
 package lk.kaushalya.dpII.example.model;
 
-/// මෙතන patient object එක කියන්නේ request එක
+// Here, the patient object is treated as the request.
 class Patient {
 
     private String name;
@@ -110,10 +110,10 @@ public class Test {
         Consultant consultant = new Consultant();
 
 
-        // Set up the chain of responsibility,
-        // මෙතන generalDoctor එකේ doctor කියන්නේ specialist එක, specialist එකේ doctor කියන්නේ consultant එක
-        // මෙහෙම තියා ගන්න පුලුවන් වෙන්නේ polymorphism එක නිසා, Doctor class එකේ doctor කියන්නේ Doctor type එකක්,
-        // ඒකේ reference එකක් තියෙනවා, ඒකේ actual object එක වෙනස් වුණත්, ඒකේ method call කරන්න පුලුවන්.
+        // Set up the chain of responsibility.
+        // The generalDoctor's next doctor is specialist, and the specialist's next doctor is consultant.
+        // This works because of polymorphism: the Doctor field can hold any Doctor object type.
+        // The reference can point to different implementations while still using the same method calls.
         generalDoctor.setDoctor(specialist);
         specialist.setDoctor(consultant);
 
